@@ -1,0 +1,47 @@
+//git init 初始化git仓库
+
+//git init xxx 指定目录为git仓库
+
+//git status 查看状态
+//git add filename添加新文件
+//git reset filename 将暂存区的文件取消暂存
+
+//git commit -m "提交信息"
+
+//git commit -a -m "change some files"
+
+//连接远程仓库
+1.ssh 查看是否安装ssh
+2.ssh-keygen -t -rsa 指定rsa算法生成密钥 接着回车 然后就会生成两个文件 id_rsa （密钥）和 id_rsa.pub （公钥）
+
+3.打开文件，复制id_rsa.pub的key
+4.github->settings->ssh and gpg keys->new ssh key->key框->add
+5.ssh -T git@github.com  验证绑定
+6.绑定成功 提示：Hi txy5941! You've successfully authenticated, but GitHub does not provide shell access.
+7.进入上传的仓库
+git remote add origin 仓库地址
+8.检出仓库
+//创建本地仓库的克隆版本
+git clone /path/to/repository
+//远程服务器上的仓库
+git clone username@host:/path/to/repository
+
+git push origin master # 把本地代码推到远程 master 分支
+git pull origin master # 把远程最新的代码更新到本地
+
+//git branch -M main 创建main分支
+//git checkout -b feature_x创建一个feature_x分支
+//git merge main 合并main分支
+//git checkout master 切换到master分支
+//git branch -d test 删除test分支
+ps:除非git push origin <branch> 否则他人不可见
+//git push -u origin main 推送
+
+//git pull 更新本地仓库的最新改动
+
+
+假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：
+git fetch origin
+git reset --hard origin/master
+
+123456
