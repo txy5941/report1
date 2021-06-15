@@ -1,3 +1,21 @@
 //git init 初始化git仓库
 
 //git init xxx 指定目录为git仓库
+
+//git add filename添加新文件
+
+//git commit -m "提交信息"
+
+//git commit -a -m "change some files"
+
+//连接远程仓库
+1.ssh 查看是否安装ssh
+2.ssh-keygen -t -rsa 指定rsa算法生成密钥 接着回车 然后就会生成两个文件 id_rsa （密钥）和 id_rsa.pub （公钥）
+
+3.打开文件，复制id_rsa.pub的key
+4.github->settings->ssh and gpg keys->new ssh key->key框->add
+5.ssh -T git@github.com  验证绑定
+6.绑定成功 提示：Hi txy5941! You've successfully authenticated, but GitHub does not provide shell access.
+7.
+git push origin master # 把本地代码推到远程 master 分支
+git pull origin master # 把远程最新的代码更新到本地
