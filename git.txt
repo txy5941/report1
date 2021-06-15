@@ -16,6 +16,28 @@
 4.github->settings->ssh and gpg keys->new ssh key->key框->add
 5.ssh -T git@github.com  验证绑定
 6.绑定成功 提示：Hi txy5941! You've successfully authenticated, but GitHub does not provide shell access.
-7.
+7.进入上传的仓库
+git remote add origin 仓库地址
+8.检出仓库
+//创建本地仓库的克隆版本
+git clone /path/to/repository
+//远程服务器上的仓库
+git clone username@host:/path/to/repository
+
 git push origin master # 把本地代码推到远程 master 分支
 git pull origin master # 把远程最新的代码更新到本地
+
+//git branch -M main 创建main分支
+//git checkout -b feature_x创建一个feature_x分支
+//git merge main 合并main分支
+//git checkout master 切换到master分支
+//git branch -d test 删除test分支
+ps:除非git push origin <branch> 否则他人不可见
+//git push -u origin main 推送
+
+//git pull 更新本地仓库的最新改动
+
+
+假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：
+git fetch origin
+git reset --hard origin/master
